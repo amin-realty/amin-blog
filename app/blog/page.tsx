@@ -1,6 +1,5 @@
 import { getAllPosts } from '@/lib/notion'
 import Link from 'next/link'
-import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -10,133 +9,117 @@ export const metadata: Metadata = {
 
 export const revalidate = 3600
 
-const QR_URL = 'https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://amin-realty.github.io&color=0D0D1A&bgcolor=EEF4FF'
-
 export default async function BlogPage() {
   const posts = await getAllPosts()
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-12">
-
-      {/* Agent Header Card — Luxury */}
-      <div
-        className="rounded-2xl p-7 mb-10 flex flex-col sm:flex-row items-center gap-7"
-        style={{
-          background: 'linear-gradient(120deg, #0D0D1A 0%, #1a1530 60%, #0D0D1A 100%)',
-          border: '1px solid rgba(201,151,122,0.4)',
-          boxShadow: '0 4px 32px rgba(201,151,122,0.08)',
-        }}
-      >
-        {/* Photo */}
-        <div className="flex-shrink-0">
-          <Image
-            src="/agent.jpg"
-            alt="阿敏 專業顧問"
-            width={96}
-            height={96}
-            className="rounded-full object-cover"
-            style={{ width: 96, height: 96, border: '3px solid #DC2626' }}
-          />
-        </div>
-
-        {/* Info */}
-        <div className="flex-1 text-center sm:text-left">
-          <div className="text-2xl font-black mb-1" style={{ color: '#C9977A' }}>
-            敏姐房產通
+    <main>
+      {/* HERO */}
+      <section style={{
+        background: 'linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%)',
+        padding: '80px 24px 60px',
+        textAlign: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: 800, margin: '0 auto' }}>
+          <div style={{
+            display: 'inline-block',
+            background: 'rgba(255,255,255,0.15)',
+            border: '1px solid rgba(255,255,255,0.3)',
+            color: '#d1fae5', fontSize: '0.85rem', fontWeight: 500,
+            padding: '6px 16px', borderRadius: 999, marginBottom: 20,
+          }}>
+            📚 雲林斗六房產專業知識
           </div>
-          <div
-            className="text-xs font-bold mb-2"
-            style={{ color: '#DC2626', letterSpacing: '0.25em' }}
-          >
-            紅火房屋仲介有限公司
-          </div>
-          <div className="text-base font-semibold mb-1" style={{ color: '#DC2626' }}>
-            0988-146-299
-          </div>
-          <a
-            href="https://maps.google.com/?q=雲林縣斗六市中正路312號"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs block mb-2 hover:opacity-80 transition-opacity"
-            style={{ color: 'rgba(255,255,255,0.5)' }}
-          >
-            📍 雲林縣斗六市中正路312號
-          </a>
-          <a
-            href="https://amin-realty.github.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm transition-opacity hover:opacity-100 block mb-3"
-            style={{ color: 'rgba(255,255,255,0.5)' }}
-          >
-            amin-realty.github.io
-          </a>
-          <a
-            href="https://www.facebook.com/fantasichouse"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold text-white transition-opacity hover:opacity-85"
-            style={{ background: '#1877F2' }}
-          >
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="white">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-            敏姐房產通 Facebook
-          </a>
-        </div>
-
-        {/* QR Code */}
-        <div className="flex-shrink-0 flex flex-col items-center gap-2">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={QR_URL}
-            alt="掃碼看網站"
-            width={108}
-            height={108}
-            className="rounded-lg"
-            style={{ border: '3px solid #1D4ED8', padding: 4, background: '#EEF4FF' }}
-          />
-          <span className="text-xs" style={{ color: '#1D4ED8', letterSpacing: '2px' }}>掃碼看網站</span>
-        </div>
-      </div>
-
-
-      {/* Blog Title */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">房產知識部落格</h1>
-        <p className="text-gray-500">雲林斗六房產專業知識，幫助您做出最佳決策</p>
-      </div>
-
-      {/* Posts */}
-      <div className="grid gap-6">
-        {posts.map((post) => (
-          <article key={post.id} className="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
-            <div className="flex flex-wrap gap-2 mb-3">
-              {post.tags.map((tag) => (
-                <span key={tag} className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">
-                  {tag}
-                </span>
-              ))}
+          <h1 style={{ fontSize: 'clamp(1.8rem,5vw,3rem)', fontWeight: 900, color: '#fff', marginBottom: 16 }}>
+            房產知識部落格
+          </h1>
+          <p style={{ fontSize: '1.1rem', color: '#a7f3d0', lineHeight: 1.8, marginBottom: 32 }}>
+            買房、賣房、節稅、投資，敏姐幫你搞懂每一步
+          </p>
+          {/* Agent Card */}
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: 20,
+            background: 'rgba(0,0,0,0.25)', border: '1px solid rgba(110,231,183,0.4)',
+            borderRadius: 16, padding: '16px 32px',
+          }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/agent.jpg"
+              alt="敏姐"
+              style={{ width: 72, height: 72, borderRadius: '50%', objectFit: 'cover', border: '3px solid #6ee7b7', flexShrink: 0 }}
+            />
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ fontWeight: 900, fontSize: '1.2rem', color: '#fff' }}>敏姐房產通</div>
+              <div style={{ color: '#6ee7b7', fontSize: '0.85rem', marginBottom: 4 }}>紅火房屋仲介有限公司</div>
+              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <a href="tel:0988146299" style={{ color: '#d1fae5', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 700 }}>📞 0988-146-299</a>
+                <a href="https://www.facebook.com/fantasichouse" target="_blank" rel="noopener noreferrer"
+                  style={{ background: '#1877F2', color: '#fff', padding: '3px 12px', borderRadius: 6, fontSize: '0.8rem', fontWeight: 700, textDecoration: 'none' }}>
+                  FB 粉專
+                </a>
+                <a href="https://wa.me/886988146299" target="_blank" rel="noopener noreferrer"
+                  style={{ background: '#25D366', color: '#fff', padding: '3px 12px', borderRadius: 6, fontSize: '0.8rem', fontWeight: 700, textDecoration: 'none' }}>
+                  💬 WhatsApp
+                </a>
+              </div>
+              <a href="https://maps.google.com/?q=雲林縣斗六市中正路312號" target="_blank" rel="noopener noreferrer"
+                style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.75rem', textDecoration: 'none', marginTop: 4, display: 'block' }}>
+                📍 雲林縣斗六市中正路312號
+              </a>
             </div>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">
-              <Link href={`/blog/${post.slug}`} className="hover:text-orange-600 transition-colors">
-                {post.title}
-              </Link>
-            </h2>
-            <p className="text-gray-600 text-sm mb-4 line-clamp-2">{post.summary}</p>
-            <div className="flex items-center justify-between">
-              <time className="text-xs text-gray-400">{post.date}</time>
-              <Link href={`/blog/${post.slug}`} className="text-sm text-orange-600 hover:underline font-medium">
-                閱讀全文 →
-              </Link>
-            </div>
-          </article>
-        ))}
-      </div>
+          </div>
+        </div>
+      </section>
 
-      {posts.length === 0 && (
-        <div className="text-center py-20 text-gray-400">目前還沒有文章，敬請期待。</div>
-      )}
+      {/* POSTS */}
+      <section style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px' }}>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#064e3b', marginBottom: 32, borderLeft: '4px solid #25D366', paddingLeft: 12 }}>
+          最新文章
+        </h2>
+        <div style={{ display: 'grid', gap: 24 }}>
+          {posts.map((post) => (
+            <article key={post.id} style={{
+              border: '1px solid #e5e7eb', borderRadius: 16, padding: 28,
+              transition: 'box-shadow .2s',
+              boxShadow: '0 2px 8px rgba(6,78,59,0.06)',
+            }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 12 }}>
+                {post.tags.map((tag) => (
+                  <span key={tag} style={{
+                    background: '#d1fae5', color: '#065f46',
+                    padding: '3px 10px', borderRadius: 999, fontSize: '0.78rem', fontWeight: 700,
+                  }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#1a1a1a', marginBottom: 8 }}>
+                <Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  {post.title}
+                </Link>
+              </h3>
+              <p style={{ color: '#6b7280', fontSize: '0.95rem', marginBottom: 16, lineHeight: 1.7 }}>
+                {post.summary}
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <time style={{ fontSize: '0.82rem', color: '#9ca3af' }}>{post.date}</time>
+                <Link href={`/blog/${post.slug}`} style={{
+                  background: '#064e3b', color: '#fff',
+                  padding: '8px 20px', borderRadius: 8,
+                  textDecoration: 'none', fontSize: '0.88rem', fontWeight: 700,
+                }}>
+                  閱讀全文 →
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+        {posts.length === 0 && (
+          <div style={{ textAlign: 'center', padding: '80px 0', color: '#9ca3af' }}>目前還沒有文章，敬請期待。</div>
+        )}
+      </section>
     </main>
   )
 }

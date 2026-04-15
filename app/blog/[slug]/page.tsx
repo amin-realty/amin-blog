@@ -32,55 +32,82 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const html = blocksToHtml(blocks)
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-12">
-      <a href="/blog" className="text-sm text-orange-600 hover:underline">← 返回部落格</a>
-
-      <div className="flex flex-wrap gap-2 mb-4 mt-6">
-        {post.tags.map((tag) => (
-          <span key={tag} className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">{tag}</span>
-        ))}
-      </div>
-
-      <h1 className="text-3xl font-bold text-gray-900 mb-3">{post.title}</h1>
-      <p className="text-gray-400 text-sm mb-8">{post.date} · 敏姐房產通</p>
-
-      <article className="text-gray-700" dangerouslySetInnerHTML={{ __html: html }} />
-
-      {/* CTA 聯絡區塊 */}
-      <div
-        className="mt-12 p-6 rounded-2xl"
-        style={{ background: 'linear-gradient(120deg,#0D0D1A,#1a1530)', border: '1px solid rgba(201,151,122,0.3)' }}
-      >
-        <p className="font-black text-lg mb-1" style={{ color: '#C9977A' }}>想了解更多？找敏姐房產通</p>
-        <a
-          href="https://maps.google.com/?q=雲林縣斗六市中正路312號"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm mb-4 block hover:opacity-80 transition-opacity"
-          style={{ color: 'rgba(255,255,255,0.55)' }}
-        >
-          📍 敏姐房產通 · 紅火房屋仲介有限公司 · 雲林縣斗六市中正路312號
-        </a>
-        <div className="flex flex-wrap gap-3">
-          <a
-            href="tel:0988146299"
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-lg font-bold text-white text-sm transition-opacity hover:opacity-80"
-            style={{ background: '#DC2626' }}
-          >
-            📞 0988-146-299
+    <main>
+      {/* Hero 標題區 */}
+      <section style={{
+        background: 'linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%)',
+        padding: '60px 24px 48px',
+        textAlign: 'center',
+      }}>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          <a href="/blog" style={{
+            display: 'inline-block', marginBottom: 20,
+            color: '#6ee7b7', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500,
+          }}>
+            ← 返回部落格
           </a>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center', marginBottom: 16 }}>
+            {post.tags.map((tag) => (
+              <span key={tag} style={{
+                background: 'rgba(110,231,183,0.2)', color: '#6ee7b7',
+                padding: '4px 12px', borderRadius: 999, fontSize: '0.8rem', fontWeight: 700,
+                border: '1px solid rgba(110,231,183,0.4)',
+              }}>
+                {tag}
+              </span>
+            ))}
+          </div>
+          <h1 style={{ fontSize: 'clamp(1.5rem,4vw,2.4rem)', fontWeight: 900, color: '#fff', marginBottom: 12, lineHeight: 1.3 }}>
+            {post.title}
+          </h1>
+          <p style={{ color: '#a7f3d0', fontSize: '0.9rem' }}>{post.date} · 敏姐房產通</p>
+        </div>
+      </section>
+
+      {/* 文章內容 */}
+      <section style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px' }}>
+        <article
+          style={{ color: '#374151', lineHeight: 1.9, fontSize: '1.05rem' }}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+
+        {/* CTA */}
+        <div style={{
+          marginTop: 56,
+          background: 'linear-gradient(135deg, #064e3b, #065f46)',
+          borderRadius: 16, padding: '32px',
+          border: '1px solid rgba(110,231,183,0.3)',
+        }}>
+          <p style={{ fontWeight: 900, fontSize: '1.2rem', color: '#6ee7b7', marginBottom: 6 }}>
+            想了解更多？找敏姐房產通
+          </p>
+          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', marginBottom: 20 }}>
+            紅火房屋仲介有限公司
+          </p>
           <a
-            href="https://www.facebook.com/fantasichouse"
+            href="https://maps.google.com/?q=雲林縣斗六市中正路312號"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-lg font-bold text-white text-sm transition-opacity hover:opacity-80"
-            style={{ background: '#1877F2' }}
+            style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', textDecoration: 'none', display: 'block', marginBottom: 20 }}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            FB 敏姐房產通
+            📍 雲林縣斗六市中正路312號
           </a>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+            <a href="tel:0988146299"
+              style={{ background: '#DC2626', color: '#fff', padding: '10px 24px', borderRadius: 8, fontWeight: 700, fontSize: '0.95rem', textDecoration: 'none' }}>
+              📞 0988-146-299
+            </a>
+            <a href="https://wa.me/886988146299" target="_blank" rel="noopener noreferrer"
+              style={{ background: '#25D366', color: '#fff', padding: '10px 24px', borderRadius: 8, fontWeight: 700, fontSize: '0.95rem', textDecoration: 'none' }}>
+              💬 WhatsApp 免費諮詢
+            </a>
+            <a href="https://www.facebook.com/fantasichouse" target="_blank" rel="noopener noreferrer"
+              style={{ background: '#1877F2', color: '#fff', padding: '10px 24px', borderRadius: 8, fontWeight: 700, fontSize: '0.95rem', textDecoration: 'none' }}>
+              FB 敏姐房產通
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   )
 }

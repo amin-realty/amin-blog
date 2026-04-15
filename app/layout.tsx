@@ -44,12 +44,50 @@ export default function RootLayout({
   return (
     <html lang="zh-TW">
       <head>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body style={{ fontFamily: "'Noto Sans TC', sans-serif", margin: 0, padding: 0, background: '#fff', color: '#1a1a1a' }}>
+        {/* NAV */}
+        <nav style={{
+          position: 'fixed', top: 0, width: '100%', zIndex: 100,
+          background: 'rgba(255,255,255,0.96)',
+          backdropFilter: 'blur(8px)',
+          borderBottom: '1px solid #e5e7eb',
+          padding: '0 24px',
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          height: 64, boxSizing: 'border-box',
+        }}>
+          <a href="https://amin-realty.github.io" style={{ fontSize: '1.2rem', fontWeight: 900, color: '#166534', letterSpacing: 1, textDecoration: 'none' }}>
+            🏠 敏姐房產通
+          </a>
+          <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
+            <a href="https://amin-realty.github.io#properties" style={{ textDecoration: 'none', color: '#374151', fontWeight: 500, fontSize: '0.95rem' }}>最新物件</a>
+            <a href="https://amin-realty.github.io#services" style={{ textDecoration: 'none', color: '#374151', fontWeight: 500, fontSize: '0.95rem' }}>服務項目</a>
+            <a href="/blog" style={{ textDecoration: 'none', color: '#166534', fontWeight: 700, fontSize: '0.95rem' }}>部落格</a>
+            <a href="https://amin-realty.github.io#contact" style={{ textDecoration: 'none', color: '#374151', fontWeight: 500, fontSize: '0.95rem' }}>立即諮詢</a>
+            <a
+              href="https://wa.me/886988146299"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                background: '#25D366', color: '#fff', border: 'none',
+                padding: '10px 20px', borderRadius: 8,
+                fontWeight: 700, fontSize: '0.9rem',
+                textDecoration: 'none',
+              }}
+            >
+              💬 WhatsApp 諮詢
+            </a>
+          </div>
+        </nav>
+        <div style={{ paddingTop: 64 }}>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
