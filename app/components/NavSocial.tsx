@@ -40,24 +40,27 @@ export default function NavSocial() {
   }
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+    <div style={{
+      position: 'fixed', right: 0, top: '50%', transform: 'translateY(-50%)',
+      zIndex: 999, display: 'flex', flexDirection: 'column',
+      borderRadius: '12px 0 0 12px', overflow: 'hidden',
+      boxShadow: '-4px 0 20px rgba(0,0,0,0.15)',
+    }}>
       {/* 按讚 */}
       <button
         onClick={toggleLike}
         style={{
-          display: 'flex', alignItems: 'center', gap: 6,
-          background: liked ? '#b91c1c' : '#fff1f2',
-          border: `1.5px solid ${liked ? '#b91c1c' : '#fca5a5'}`,
-          color: liked ? '#fff' : '#b91c1c',
-          borderRadius: 8, padding: '7px 13px', cursor: 'pointer',
-          fontSize: '0.85rem', fontWeight: 700, fontFamily: 'inherit',
+          display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3,
+          background: liked ? '#fff1f2' : '#fff',
+          border: 'none', borderBottom: '1px solid #f0e0e0',
+          padding: '14px 16px', cursor: 'pointer',
+          fontFamily: 'inherit', minWidth: 72,
           transition: 'background .2s',
-          whiteSpace: 'nowrap',
         }}
       >
-        <span style={{ fontSize: '1rem', display: 'inline-block', transform: liked ? 'scale(1.3)' : 'scale(1)', transition: 'transform .2s' }}>👍</span>
-        <span>{liked ? '已按讚' : '按讚'}</span>
-        <span style={{ fontSize: '0.82rem', fontWeight: 800, minWidth: 22 }}>{count}</span>
+        <span style={{ fontSize: '1.5rem', display: 'inline-block', transform: liked ? 'scale(1.2)' : 'scale(1)', transition: 'transform .2s' }}>👍</span>
+        <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#b91c1c' }}>{liked ? '已按讚' : '按讚'}</span>
+        <span style={{ fontSize: '0.85rem', fontWeight: 900, color: '#b91c1c' }}>{count}</span>
       </button>
 
       {/* 追蹤 */}
@@ -67,17 +70,16 @@ export default function NavSocial() {
         rel="noopener noreferrer"
         onClick={handleFollow}
         style={{
-          display: 'flex', alignItems: 'center', gap: 5,
+          display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3,
           background: followed ? '#374151' : '#1877F2',
-          color: '#fff', borderRadius: 8,
-          padding: '7px 14px', cursor: 'pointer',
-          fontSize: '0.85rem', fontWeight: 700,
-          textDecoration: 'none', whiteSpace: 'nowrap',
-          transition: 'background .2s',
+          padding: '14px 16px', cursor: 'pointer',
+          textDecoration: 'none', transition: 'background .2s',
         }}
       >
-        <span>{followed ? '✓' : '＋'}</span>
-        <span>{followed ? '已追蹤' : '追蹤最新消息'}</span>
+        <span style={{ fontSize: '1.3rem', color: '#fff' }}>{followed ? '✓' : '＋'}</span>
+        <span style={{ fontSize: '0.72rem', fontWeight: 700, color: '#fff', textAlign: 'center', lineHeight: 1.3 }}>
+          {followed ? '已追蹤' : '追蹤\n最新消息'}
+        </span>
       </a>
     </div>
   )
