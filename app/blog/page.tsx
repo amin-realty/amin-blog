@@ -54,6 +54,15 @@ export default async function BlogPage() {
             0988-146-299
           </div>
           <a
+            href="https://maps.google.com/?q=雲林縣斗六市中正路312號"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs block mb-2 hover:opacity-80 transition-opacity"
+            style={{ color: 'rgba(255,255,255,0.5)' }}
+          >
+            📍 雲林縣斗六市中正路312號
+          </a>
+          <a
             href="https://amin-realty.github.io"
             target="_blank"
             rel="noopener noreferrer"

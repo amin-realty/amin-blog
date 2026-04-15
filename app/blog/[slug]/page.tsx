@@ -52,7 +52,15 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         style={{ background: 'linear-gradient(120deg,#0D0D1A,#1a1530)', border: '1px solid rgba(201,151,122,0.3)' }}
       >
         <p className="font-black text-lg mb-1" style={{ color: '#C9977A' }}>想了解更多？找敏姐房產通</p>
-        <p className="text-sm mb-4" style={{ color: 'rgba(255,255,255,0.55)' }}>敏姐房產通 · 紅火房屋仲介有限公司 · 雲林縣斗六市中正路312號</p>
+        <a
+          href="https://maps.google.com/?q=雲林縣斗六市中正路312號"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm mb-4 block hover:opacity-80 transition-opacity"
+          style={{ color: 'rgba(255,255,255,0.55)' }}
+        >
+          📍 敏姐房產通 · 紅火房屋仲介有限公司 · 雲林縣斗六市中正路312號
+        </a>
         <div className="flex flex-wrap gap-3">
           <a
             href="tel:0988146299"
