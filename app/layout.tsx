@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import NavSocial from "./components/NavSocial";
 
 export const metadata: Metadata = {
   title: "敏姐房產通 | 雲林斗六專業房仲",
@@ -69,6 +70,7 @@ export default function RootLayout({
             <a href="https://amin-realty.github.io#services" style={{ textDecoration: 'none', color: '#374151', fontWeight: 500, fontSize: '0.95rem' }}>服務項目</a>
             <a href="/blog" style={{ textDecoration: 'none', color: '#166534', fontWeight: 700, fontSize: '0.95rem' }}>部落格</a>
             <a href="https://amin-realty.github.io#contact" style={{ textDecoration: 'none', color: '#374151', fontWeight: 500, fontSize: '0.95rem' }}>立即諮詢</a>
+            <NavSocial />
             <a
               href="https://wa.me/886988146299"
               target="_blank"
