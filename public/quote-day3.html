@@ -12,89 +12,77 @@
     display: flex; align-items: center; justify-content: center;
   }
   .wrap {
-    width: 900px;
+    width: 960px;
     text-align: center;
     color: white;
-    padding: 50px 60px;
+    padding: 40px 50px;
   }
   .tag {
     display: inline-block;
     background: #DC2626;
     color: white;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
-    padding: 10px 28px;
+    padding: 10px 30px;
     border-radius: 30px;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     letter-spacing: 2px;
   }
   .quote-mark {
-    font-size: 100px;
-    color: rgba(220,38,38,0.4);
+    font-size: 90px;
+    color: rgba(220,38,38,0.35);
     line-height: 0.5;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     font-family: Georgia, serif;
   }
   .quote {
-    font-size: 56px;
+    font-size: 76px;
     font-weight: 900;
-    line-height: 1.5;
+    line-height: 1.45;
     color: #ffffff;
-    margin-bottom: 32px;
-    letter-spacing: 2px;
+    margin-bottom: 28px;
+    letter-spacing: 3px;
   }
   .quote span { color: #FCA5A5; }
-  .sub {
-    font-size: 28px;
-    color: rgba(255,255,255,0.8);
-    line-height: 1.9;
-    margin-bottom: 36px;
-  }
   .divider {
-    width: 80px; height: 4px;
+    width: 90px; height: 5px;
     background: #DC2626;
-    margin: 0 auto 40px;
-    border-radius: 2px;
+    margin: 0 auto 28px;
+    border-radius: 3px;
   }
-  /* Agent card */
+  .sub {
+    font-size: 34px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
   .agent-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 28px;
     background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 20px;
-    padding: 20px 36px;
-    backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255,255,255,0.18);
+    border-radius: 22px;
+    padding: 28px 50px;
   }
-  .agent-photo {
-    width: 100px; height: 100px;
-    border-radius: 50%;
-    border: 4px solid #DC2626;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
-  .agent-info {
-    text-align: left;
-  }
+  .agent-info { text-align: center; }
   .agent-name {
-    font-size: 28px;
+    font-size: 34px;
     font-weight: 900;
     color: #fff;
     margin-bottom: 6px;
   }
   .agent-phone {
-    font-size: 26px;
+    font-size: 32px;
     font-weight: 700;
     color: #FCA5A5;
     margin-bottom: 6px;
     letter-spacing: 1px;
   }
   .agent-link {
-    font-size: 20px;
-    color: rgba(255,255,255,0.65);
-    letter-spacing: 0.5px;
+    font-size: 22px;
+    color: rgba(255,255,255,0.6);
   }
 </style>
 </head>
@@ -108,12 +96,10 @@
   </div>
   <div class="divider"></div>
   <div class="sub">
-    房地合一稅 2.0｜持有未滿2年稅率高達 45%<br>
-    自住滿6年，400萬獲利內 <strong style="color:#86EFAC">全額免稅</strong>
+    持有未滿2年稅率高達 <strong style="color:#FCA5A5">45%</strong><br>
+    自住滿6年，400萬內 <strong style="color:#86EFAC">全額免稅</strong>
   </div>
-
   <div class="agent-card">
-    <img class="agent-photo" src="agent.jpg" alt="阿敏">
     <div class="agent-info">
       <div class="agent-name">找阿敏房產通 🔑</div>
       <div class="agent-phone">📞 0988-146-299</div>
