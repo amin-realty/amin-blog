@@ -2,7 +2,6 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -13,58 +12,89 @@
     display: flex; align-items: center; justify-content: center;
   }
   .wrap {
-    width: 880px;
+    width: 900px;
     text-align: center;
     color: white;
-    padding: 60px;
+    padding: 50px 60px;
   }
   .tag {
     display: inline-block;
     background: #DC2626;
     color: white;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
-    padding: 8px 24px;
+    padding: 10px 28px;
     border-radius: 30px;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
     letter-spacing: 2px;
   }
   .quote-mark {
-    font-size: 120px;
+    font-size: 100px;
     color: rgba(220,38,38,0.4);
     line-height: 0.5;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-family: Georgia, serif;
   }
   .quote {
-    font-size: 48px;
+    font-size: 56px;
     font-weight: 900;
     line-height: 1.5;
     color: #ffffff;
-    margin-bottom: 48px;
-    letter-spacing: 1px;
+    margin-bottom: 32px;
+    letter-spacing: 2px;
   }
-  .quote span {
-    color: #FCA5A5;
-  }
+  .quote span { color: #FCA5A5; }
   .sub {
-    font-size: 22px;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.8;
-    margin-bottom: 56px;
+    font-size: 28px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.9;
+    margin-bottom: 36px;
   }
   .divider {
-    width: 80px;
-    height: 4px;
+    width: 80px; height: 4px;
     background: #DC2626;
     margin: 0 auto 40px;
     border-radius: 2px;
   }
-  .brand {
+  /* Agent card */
+  .agent-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 20px 36px;
+    backdrop-filter: blur(10px);
+  }
+  .agent-photo {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    border: 4px solid #DC2626;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .agent-info {
+    text-align: left;
+  }
+  .agent-name {
+    font-size: 28px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .agent-phone {
+    font-size: 26px;
+    font-weight: 700;
+    color: #FCA5A5;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .agent-link {
     font-size: 20px;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 3px;
-    font-weight: 500;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.5px;
   }
 </style>
 </head>
@@ -81,7 +111,15 @@
     房地合一稅 2.0｜持有未滿2年稅率高達 45%<br>
     自住滿6年，400萬獲利內 <strong style="color:#86EFAC">全額免稅</strong>
   </div>
-  <div class="brand">紅火房屋仲介｜雲林斗六</div>
+
+  <div class="agent-card">
+    <img class="agent-photo" src="agent.jpg" alt="阿敏">
+    <div class="agent-info">
+      <div class="agent-name">找阿敏房產通 🔑</div>
+      <div class="agent-phone">📞 0988-146-299</div>
+      <div class="agent-link">🌐 amin-realty.github.io</div>
+    </div>
+  </div>
 </div>
 </body>
 </html>
