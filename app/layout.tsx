@@ -3,16 +3,17 @@ import "./globals.css";
 import NavSocial from "./components/NavSocial";
 
 export const metadata: Metadata = {
-  title: "敏姐房產通 | 雲林斗六專業房仲",
-  description: "雲林縣斗六市專業房屋仲介，提供買房、賣房、租屋服務。敏姐房產通，0988-146-299，雲林縣斗六市中正路312號。",
-  keywords: ["敏姐房產通", "斗六房仲", "雲林房仲", "斗六買房", "雲林買房", "房屋仲介", "斗六租屋", "紅火房屋仲介"],
+  title: "🏠 房產知識部落格｜敏姐房產通",
+  description: "買房、賣房、節稅、投資，敏姐幫你搞懂每一步！雲林斗六專業房仲知識平台。",
+  keywords: ["敏姐房產通", "房產部落格", "買房指南", "斗六房仲", "雲林房仲", "節稅攻略", "房屋仲介"],
   openGraph: {
-    title: "敏姐房產通 | 雲林斗六專業房仲",
-    description: "雲林縣斗六市專業房屋仲介，提供買房、賣房、租屋服務。",
-    url: "https://amin-blog.vercel.app",
+    title: "🏠 房產知識部落格｜敏姐房產通",
+    description: "買房、賣房、節稅、投資，敏姐幫你搞懂每一步！",
+    url: "https://amin-blog.vercel.app/blog",
     siteName: "敏姐房產通",
     locale: "zh_TW",
     type: "website",
+    images: [{ url: "https://amin-blog.vercel.app/agent.jpg", width: 800, height: 600 }],
   },
 };
 
