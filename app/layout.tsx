@@ -68,8 +68,7 @@ export default function RootLayout({
           <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
             <a href="https://amin-realty.github.io" style={{ textDecoration: 'none', color: '#374151', fontWeight: 500, fontSize: '0.9rem' }}>主網站</a>
             <a href="/blog" style={{ textDecoration: 'none', color: '#166534', fontWeight: 700, fontSize: '0.9rem' }}>部落格</a>
-            <NavSocial />
-            <a
+            <
               href="https://wa.me/886988146299"
               target="_blank"
               rel="noopener noreferrer"
@@ -84,6 +83,7 @@ export default function RootLayout({
             </a>
           </div>
         </nav>
+        <NavSocial />
         <div style={{ paddingTop: 64 }}>
           {children}
         </div>
