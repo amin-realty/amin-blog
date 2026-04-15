@@ -40,34 +40,50 @@ export default async function BlogPage() {
           </p>
           {/* Agent Card */}
           <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: 20,
+            display: 'flex', alignItems: 'center', gap: 24,
             background: 'rgba(0,0,0,0.25)', border: '1px solid rgba(110,231,183,0.4)',
-            borderRadius: 16, padding: '16px 32px',
+            borderRadius: 16, padding: '20px 32px',
+            flexWrap: 'wrap', justifyContent: 'center',
           }}>
+            {/* 照片 */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/agent.jpg"
               alt="敏姐"
-              style={{ width: 72, height: 72, borderRadius: '50%', objectFit: 'cover', border: '3px solid #6ee7b7', flexShrink: 0 }}
+              style={{ width: 80, height: 80, borderRadius: '50%', objectFit: 'cover', border: '3px solid #6ee7b7', flexShrink: 0 }}
             />
-            <div style={{ textAlign: 'left' }}>
-              <div style={{ fontWeight: 900, fontSize: '1.2rem', color: '#fff' }}>敏姐房產通</div>
-              <div style={{ color: '#6ee7b7', fontSize: '0.85rem', marginBottom: 4 }}>紅火房屋仲介有限公司</div>
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                <a href="tel:0988146299" style={{ color: '#d1fae5', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 700 }}>📞 0988-146-299</a>
+            {/* 資訊 */}
+            <div style={{ textAlign: 'left', flex: 1, minWidth: 200 }}>
+              <div style={{ fontWeight: 900, fontSize: '1.3rem', color: '#fff', marginBottom: 2 }}>敏姐房產通</div>
+              <div style={{ color: '#6ee7b7', fontSize: '0.82rem', marginBottom: 8 }}>紅火房屋仲介有限公司</div>
+              <a href="tel:0988146299" style={{ color: '#fca5a5', textDecoration: 'none', fontSize: '1rem', fontWeight: 700, display: 'block', marginBottom: 8 }}>
+                📞 0988-146-299
+              </a>
+              <a href="https://maps.google.com/?q=雲林縣斗六市中正路312號" target="_blank" rel="noopener noreferrer"
+                style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.75rem', textDecoration: 'none', display: 'block', marginBottom: 10 }}>
+                📍 雲林縣斗六市中正路312號
+              </a>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 <a href="https://www.facebook.com/fantasichouse" target="_blank" rel="noopener noreferrer"
-                  style={{ background: '#1877F2', color: '#fff', padding: '3px 12px', borderRadius: 6, fontSize: '0.8rem', fontWeight: 700, textDecoration: 'none' }}>
-                  FB 粉專
+                  style={{ background: '#1877F2', color: '#fff', padding: '5px 14px', borderRadius: 6, fontSize: '0.82rem', fontWeight: 700, textDecoration: 'none' }}>
+                  FB 敏姐房產通
                 </a>
                 <a href="https://wa.me/886988146299" target="_blank" rel="noopener noreferrer"
-                  style={{ background: '#25D366', color: '#fff', padding: '3px 12px', borderRadius: 6, fontSize: '0.8rem', fontWeight: 700, textDecoration: 'none' }}>
+                  style={{ background: '#25D366', color: '#fff', padding: '5px 14px', borderRadius: 6, fontSize: '0.82rem', fontWeight: 700, textDecoration: 'none' }}>
                   💬 WhatsApp
                 </a>
               </div>
-              <a href="https://maps.google.com/?q=雲林縣斗六市中正路312號" target="_blank" rel="noopener noreferrer"
-                style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.75rem', textDecoration: 'none', marginTop: 4, display: 'block' }}>
-                📍 雲林縣斗六市中正路312號
-              </a>
+            </div>
+            {/* QR Code */}
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, flexShrink: 0 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://amin-realty.github.io&color=0D0D1A&bgcolor=EEF4FF"
+                alt="掃碼看網站"
+                width={108} height={108}
+                style={{ borderRadius: 8, border: '3px solid #6ee7b7', padding: 4, background: '#EEF4FF' }}
+              />
+              <span style={{ fontSize: '0.72rem', color: '#6ee7b7', letterSpacing: 2 }}>掃碼看網站</span>
             </div>
           </div>
         </div>
