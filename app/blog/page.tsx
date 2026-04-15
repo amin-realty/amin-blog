@@ -41,14 +41,14 @@ export default async function BlogPage() {
 
         {/* Info */}
         <div className="flex-1 text-center sm:text-left">
+          <div className="text-2xl font-black mb-1" style={{ color: '#C9977A' }}>
+            阿敏房產通
+          </div>
           <div
             className="text-xs font-bold mb-2"
             style={{ color: '#DC2626', letterSpacing: '0.25em' }}
           >
-            阿敏房產通
-          </div>
-          <div className="text-2xl font-black mb-2" style={{ color: '#C9977A' }}>
-            阿敏房產通
+            紅火房屋仲介有限公司
           </div>
           <div className="text-base font-semibold mb-1" style={{ color: '#DC2626' }}>
             0988-146-299
