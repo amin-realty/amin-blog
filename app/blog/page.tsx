@@ -96,6 +96,10 @@ export default async function BlogPage() {
                 style={{ borderRadius: 10, border: '3px solid #f87171', padding: 4, background: '#FFF7F7' }}
               />
               <span style={{ fontSize: '0.72rem', color: '#fca5a5', letterSpacing: 2 }}>掃碼看網站</span>
+              <a href="https://amin-realty.github.io" target="_blank" rel="noopener noreferrer"
+                style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', letterSpacing: 0.5 }}>
+                amin-realty.github.io
+              </a>
             </div>
           </div>
         </div>
