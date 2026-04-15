@@ -4,8 +4,8 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '房產知識部落格 | 紅火房屋仲介',
-  description: '雲林斗六房產知識、買房指南、市場分析，由紅火房屋仲介專業團隊撰寫。',
+  title: '房產知識部落格 | 阿敏房產通',
+  description: '雲林斗六房產知識、買房指南、市場分析，由阿敏房產通專業顧問撰寫。',
 }
 
 export const revalidate = 3600
@@ -45,7 +45,7 @@ export default async function BlogPage() {
             className="text-xs font-bold mb-2"
             style={{ color: '#DC2626', letterSpacing: '0.25em' }}
           >
-            紅火房屋仲介有限公司
+            阿敏房產通
           </div>
           <div className="text-2xl font-black mb-2" style={{ color: '#C9977A' }}>
             阿敏房產通
