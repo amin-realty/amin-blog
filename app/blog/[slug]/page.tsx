@@ -35,23 +35,23 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     <main>
       {/* Hero 標題區 */}
       <section style={{
-        background: 'linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%)',
+        background: 'linear-gradient(160deg, #1a1a2e 0%, #16213e 45%, #9b1c1c 80%, #b91c1c 100%)',
         padding: '60px 24px 48px',
         textAlign: 'center',
       }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <a href="/blog" style={{
             display: 'inline-block', marginBottom: 20,
-            color: '#6ee7b7', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500,
+            color: '#fca5a5', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500,
           }}>
             ← 返回部落格
           </a>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center', marginBottom: 16 }}>
             {post.tags.map((tag) => (
               <span key={tag} style={{
-                background: 'rgba(110,231,183,0.2)', color: '#6ee7b7',
+                background: 'rgba(185,28,28,0.2)', color: '#fca5a5',
                 padding: '4px 12px', borderRadius: 999, fontSize: '0.8rem', fontWeight: 700,
-                border: '1px solid rgba(110,231,183,0.4)',
+                border: '1px solid rgba(185,28,28,0.4)',
               }}>
                 {tag}
               </span>
@@ -74,11 +74,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         {/* CTA */}
         <div style={{
           marginTop: 56,
-          background: 'linear-gradient(135deg, #064e3b, #065f46)',
+          background: 'linear-gradient(135deg, #1a1a2e, #7f1d1d)',
           borderRadius: 16, padding: '32px',
           border: '1px solid rgba(110,231,183,0.3)',
         }}>
-          <p style={{ fontWeight: 900, fontSize: '1.2rem', color: '#6ee7b7', marginBottom: 6 }}>
+          <p style={{ fontWeight: 900, fontSize: '1.2rem', color: '#fca5a5', marginBottom: 6 }}>
             想了解更多？找敏姐房產通
           </p>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', marginBottom: 20 }}>

@@ -13,63 +13,75 @@ export default async function BlogPage() {
   const posts = await getAllPosts()
 
   return (
-    <main>
+    <main style={{ background: '#f8f7f5' }}>
       {/* HERO */}
       <section style={{
-        background: 'linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%)',
-        padding: '80px 24px 60px',
+        background: 'linear-gradient(160deg, #1a1a2e 0%, #16213e 45%, #9b1c1c 80%, #b91c1c 100%)',
+        padding: '80px 24px 70px',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
       }}>
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: 800, margin: '0 auto' }}>
+        {/* 裝飾光暈 */}
+        <div style={{
+          position: 'absolute', top: '30%', left: '50%', transform: 'translate(-50%,-50%)',
+          width: 600, height: 600, borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(185,28,28,0.25) 0%, transparent 70%)',
+          pointerEvents: 'none',
+        }} />
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: 860, margin: '0 auto' }}>
           <div style={{
             display: 'inline-block',
-            background: 'rgba(255,255,255,0.15)',
-            border: '1px solid rgba(255,255,255,0.3)',
-            color: '#d1fae5', fontSize: '0.85rem', fontWeight: 500,
-            padding: '6px 16px', borderRadius: 999, marginBottom: 20,
+            background: 'rgba(255,255,255,0.1)',
+            border: '1px solid rgba(255,255,255,0.2)',
+            color: '#fca5a5', fontSize: '0.85rem', fontWeight: 600,
+            padding: '6px 18px', borderRadius: 999, marginBottom: 20,
+            letterSpacing: 1,
           }}>
-            📚 雲林斗六房產專業知識
+            🏠 雲林房產專業知識
           </div>
-          <h1 style={{ fontSize: 'clamp(1.8rem,5vw,3rem)', fontWeight: 900, color: '#fff', marginBottom: 16 }}>
+          <h1 style={{ fontSize: 'clamp(2rem,5vw,3.2rem)', fontWeight: 900, color: '#fff', marginBottom: 14, letterSpacing: 1 }}>
             房產知識部落格
           </h1>
-          <p style={{ fontSize: '1.1rem', color: '#a7f3d0', lineHeight: 1.8, marginBottom: 32 }}>
+          <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: 36 }}>
             買房、賣房、節稅、投資，敏姐幫你搞懂每一步
           </p>
+
           {/* Agent Card */}
           <div style={{
             display: 'flex', alignItems: 'center', gap: 24,
-            background: 'rgba(0,0,0,0.25)', border: '1px solid rgba(110,231,183,0.4)',
-            borderRadius: 16, padding: '20px 32px',
+            background: 'rgba(255,255,255,0.07)',
+            border: '1px solid rgba(255,255,255,0.15)',
+            backdropFilter: 'blur(12px)',
+            borderRadius: 20, padding: '22px 32px',
             flexWrap: 'wrap', justifyContent: 'center',
+            maxWidth: 720, margin: '0 auto',
           }}>
             {/* 照片 */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/agent.jpg"
               alt="敏姐"
-              style={{ width: 80, height: 80, borderRadius: '50%', objectFit: 'cover', border: '3px solid #6ee7b7', flexShrink: 0 }}
+              style={{ width: 82, height: 82, borderRadius: '50%', objectFit: 'cover', border: '3px solid #f87171', flexShrink: 0 }}
             />
             {/* 資訊 */}
             <div style={{ textAlign: 'left', flex: 1, minWidth: 200 }}>
-              <div style={{ fontWeight: 900, fontSize: '1.3rem', color: '#fff', marginBottom: 2 }}>敏姐房產通</div>
-              <div style={{ color: '#6ee7b7', fontSize: '0.82rem', marginBottom: 8 }}>紅火房屋仲介有限公司</div>
-              <a href="tel:0988146299" style={{ color: '#fca5a5', textDecoration: 'none', fontSize: '1rem', fontWeight: 700, display: 'block', marginBottom: 8 }}>
+              <div style={{ fontWeight: 900, fontSize: '1.25rem', color: '#fff', marginBottom: 2 }}>敏姐房產通</div>
+              <div style={{ color: '#fca5a5', fontSize: '0.8rem', marginBottom: 8, letterSpacing: 1 }}>紅火房屋仲介有限公司</div>
+              <a href="tel:0988146299" style={{ color: '#fff', textDecoration: 'none', fontSize: '1rem', fontWeight: 700, display: 'block', marginBottom: 10 }}>
                 📞 0988-146-299
               </a>
               <a href="https://maps.google.com/?q=雲林縣斗六市中正路312號" target="_blank" rel="noopener noreferrer"
-                style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.75rem', textDecoration: 'none', display: 'block', marginBottom: 10 }}>
+                style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.75rem', textDecoration: 'none', display: 'block', marginBottom: 10 }}>
                 📍 雲林縣斗六市中正路312號
               </a>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 <a href="https://www.facebook.com/fantasichouse" target="_blank" rel="noopener noreferrer"
-                  style={{ background: '#1877F2', color: '#fff', padding: '5px 14px', borderRadius: 6, fontSize: '0.82rem', fontWeight: 700, textDecoration: 'none' }}>
+                  style={{ background: '#1877F2', color: '#fff', padding: '5px 14px', borderRadius: 8, fontSize: '0.8rem', fontWeight: 700, textDecoration: 'none' }}>
                   FB 敏姐房產通
                 </a>
                 <a href="https://wa.me/886988146299" target="_blank" rel="noopener noreferrer"
-                  style={{ background: '#25D366', color: '#fff', padding: '5px 14px', borderRadius: 6, fontSize: '0.82rem', fontWeight: 700, textDecoration: 'none' }}>
+                  style={{ background: '#25D366', color: '#fff', padding: '5px 14px', borderRadius: 8, fontSize: '0.8rem', fontWeight: 700, textDecoration: 'none' }}>
                   💬 WhatsApp
                 </a>
               </div>
@@ -78,53 +90,59 @@ export default async function BlogPage() {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, flexShrink: 0 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://amin-realty.github.io&color=0D0D1A&bgcolor=EEF4FF"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://amin-realty.github.io&color=1a1a2e&bgcolor=FFF7F7"
                 alt="掃碼看網站"
-                width={108} height={108}
-                style={{ borderRadius: 8, border: '3px solid #6ee7b7', padding: 4, background: '#EEF4FF' }}
+                width={100} height={100}
+                style={{ borderRadius: 10, border: '3px solid #f87171', padding: 4, background: '#FFF7F7' }}
               />
-              <span style={{ fontSize: '0.72rem', color: '#6ee7b7', letterSpacing: 2 }}>掃碼看網站</span>
+              <span style={{ fontSize: '0.72rem', color: '#fca5a5', letterSpacing: 2 }}>掃碼看網站</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* POSTS */}
-      <section style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px' }}>
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#064e3b', marginBottom: 32, borderLeft: '4px solid #25D366', paddingLeft: 12 }}>
-          最新文章
-        </h2>
-        <div style={{ display: 'grid', gap: 24 }}>
+      <section style={{ maxWidth: 920, margin: '0 auto', padding: '52px 24px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 32 }}>
+          <div style={{ width: 5, height: 28, background: '#b91c1c', borderRadius: 3 }} />
+          <h2 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#1a1a2e', margin: 0 }}>最新文章</h2>
+        </div>
+        <div style={{ display: 'grid', gap: 20 }}>
           {posts.map((post) => (
             <article key={post.id} style={{
-              border: '1px solid #e5e7eb', borderRadius: 16, padding: 28,
-              transition: 'box-shadow .2s',
-              boxShadow: '0 2px 8px rgba(6,78,59,0.06)',
+              background: '#fff',
+              border: '1px solid #f0e8e8',
+              borderRadius: 16, padding: '28px 32px',
+              boxShadow: '0 2px 12px rgba(185,28,28,0.06)',
+              transition: 'transform .2s, box-shadow .2s',
             }}>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 12 }}>
                 {post.tags.map((tag) => (
                   <span key={tag} style={{
-                    background: '#d1fae5', color: '#065f46',
-                    padding: '3px 10px', borderRadius: 999, fontSize: '0.78rem', fontWeight: 700,
+                    background: '#fff1f1', color: '#b91c1c',
+                    padding: '3px 12px', borderRadius: 999, fontSize: '0.78rem', fontWeight: 700,
+                    border: '1px solid #fecaca',
                   }}>
                     {tag}
                   </span>
                 ))}
               </div>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#1a1a1a', marginBottom: 8 }}>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#1a1a2e', marginBottom: 8 }}>
                 <Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                   {post.title}
                 </Link>
               </h3>
-              <p style={{ color: '#6b7280', fontSize: '0.95rem', marginBottom: 16, lineHeight: 1.7 }}>
+              <p style={{ color: '#6b7280', fontSize: '0.95rem', marginBottom: 18, lineHeight: 1.7 }}>
                 {post.summary}
               </p>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <time style={{ fontSize: '0.82rem', color: '#9ca3af' }}>{post.date}</time>
                 <Link href={`/blog/${post.slug}`} style={{
-                  background: '#064e3b', color: '#fff',
-                  padding: '8px 20px', borderRadius: 8,
+                  background: 'linear-gradient(135deg, #b91c1c, #dc2626)',
+                  color: '#fff',
+                  padding: '8px 22px', borderRadius: 8,
                   textDecoration: 'none', fontSize: '0.88rem', fontWeight: 700,
+                  boxShadow: '0 3px 10px rgba(185,28,28,0.3)',
                 }}>
                   閱讀全文 →
                 </Link>
