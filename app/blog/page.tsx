@@ -35,7 +35,7 @@ export default async function BlogPage() {
             width={96}
             height={96}
             className="rounded-full object-cover"
-            style={{ width: 96, height: 96, border: '3px solid #C9977A' }}
+            style={{ width: 96, height: 96, border: '3px solid #DC2626' }}
           />
         </div>
 
