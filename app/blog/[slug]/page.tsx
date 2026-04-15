@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             📞 0988-146-299
           </a>
           <a
-            href="https://www.facebook.com/search/top?q=%E9%98%BF%E6%95%8F%E6%88%BF%E7%94%A2%E9%80%9A"
+            href="https://www.facebook.com/fantasichouse"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2 rounded-lg font-bold text-white text-sm transition-opacity hover:opacity-80"
