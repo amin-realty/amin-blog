@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export const revalidate = 3600
 
-const QR_URL = 'https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://amin-realty.github.io&color=0D0D1A&bgcolor=F5F0E8'
+const QR_URL = 'https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://amin-realty.github.io&color=0D0D1A&bgcolor=EEF4FF'
 
 export default async function BlogPage() {
   const posts = await getAllPosts()
@@ -23,8 +23,8 @@ export default async function BlogPage() {
         className="rounded-2xl p-7 mb-10 flex flex-col sm:flex-row items-center gap-7"
         style={{
           background: 'linear-gradient(120deg, #0D0D1A 0%, #1a1530 60%, #0D0D1A 100%)',
-          border: '1px solid #C9A228',
-          boxShadow: '0 4px 32px rgba(201,162,40,0.10)',
+          border: '1px solid rgba(201,151,122,0.4)',
+          boxShadow: '0 4px 32px rgba(201,151,122,0.08)',
         }}
       >
         {/* Photo */}
@@ -35,22 +35,22 @@ export default async function BlogPage() {
             width={96}
             height={96}
             className="rounded-full object-cover"
-            style={{ width: 96, height: 96, border: '3px solid #C9A228' }}
+            style={{ width: 96, height: 96, border: '3px solid #C9977A' }}
           />
         </div>
 
         {/* Info */}
         <div className="flex-1 text-center sm:text-left">
           <div
-            className="text-xs font-bold tracking-[4px] mb-2 uppercase"
-            style={{ color: '#C9A228', letterSpacing: '0.25em' }}
+            className="text-xs font-bold mb-2"
+            style={{ color: '#DC2626', letterSpacing: '0.25em' }}
           >
             紅火房屋仲介有限公司
           </div>
-          <div className="text-2xl font-black mb-2" style={{ color: '#FFFFFF' }}>
+          <div className="text-2xl font-black mb-2" style={{ color: '#C9977A' }}>
             阿敏房產通
           </div>
-          <div className="text-base font-semibold mb-1" style={{ color: '#C9A228' }}>
+          <div className="text-base font-semibold mb-1" style={{ color: '#DC2626' }}>
             0988-146-299
           </div>
           <a
@@ -73,9 +73,9 @@ export default async function BlogPage() {
             width={108}
             height={108}
             className="rounded-lg"
-            style={{ border: '2px solid #C9A228', padding: 4, background: '#F5F0E8' }}
+            style={{ border: '3px solid #1D4ED8', padding: 4, background: '#EEF4FF' }}
           />
-          <span className="text-xs" style={{ color: '#C9A228', letterSpacing: '2px' }}>掃碼看網站</span>
+          <span className="text-xs" style={{ color: '#1D4ED8', letterSpacing: '2px' }}>掃碼看網站</span>
         </div>
       </div>
 
