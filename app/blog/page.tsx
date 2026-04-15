@@ -4,7 +4,29 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: '房產知識部落格 | 敏姐房產通',
-  description: '雲林斗六房產知識、買房指南、市場分析，由敏姐房產通專業顧問撰寫。',
+  description: '🏠 買房節稅、市場分析、投資攻略，敏姐帶你搞懂雲林房產每一步！',
+  openGraph: {
+    title: '🏠 房產知識部落格｜敏姐房產通',
+    description: '買房、賣房、節稅、投資，敏姐幫你搞懂每一步｜雲林斗六專業房仲',
+    url: 'https://amin-blog.vercel.app/blog',
+    siteName: '敏姐房產通',
+    locale: 'zh_TW',
+    type: 'website',
+    images: [
+      {
+        url: 'https://amin-blog.vercel.app/agent.jpg',
+        width: 800,
+        height: 600,
+        alt: '敏姐房產通 房產知識部落格',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '🏠 房產知識部落格｜敏姐房產通',
+    description: '買房、賣房、節稅、投資，敏姐幫你搞懂每一步',
+    images: ['https://amin-blog.vercel.app/agent.jpg'],
+  },
 }
 
 export const revalidate = 3600
