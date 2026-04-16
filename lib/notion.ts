@@ -97,3 +97,46 @@ function blockToHtml(block: any): string {
     default: return text ? `<p class="mb-4">${text}</p>` : ''
   }
 }
+
+// ── 房產物件庫 ──────────────────────────────────────────────
+const PROPERTIES_DB_ID = process.env.NOTION_PROPERTIES_DATABASE_ID!
+
+export interface Property {
+  id: string
+  title: string
+  type: string       // 透天/住宅 | 土地/農地 | 預售/新成屋
+  location: string
+  area: string       // 坪數
+  rooms: string      // 格局
+  price: string      // 售價
+  oldPrice: string   // 原價（可空）
+  imageUrl: string
+  propertyUrl: string
+  badge: string      // 降價 | 精選 | 新成屋 | ''
+}
+
+export async function getProperties(): Promise<Property[]> {
+  const res = await fetch(`https://api.notion.com/v1/databases/${PROPERTIES_DB_ID}/query`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({
+      filter: { property: '狀態', select: { equals: '上架' } },
+      sorts: [{ property: '標題', direction: 'ascending' }],
+    }),
+    next: { revalidate: 1800 },
+  })
+  const data = await res.json()
+  return (data.results ?? []).map((p: any): Property => ({
+    id: p.id,
+    title: p.properties['標題']?.title?.[0]?.plain_text ?? '',
+    type: p.properties['類型']?.select?.name ?? '',
+    location: p.properties['地點']?.rich_text?.[0]?.plain_text ?? '',
+    area: p.properties['坪數']?.rich_text?.[0]?.plain_text ?? '',
+    rooms: p.properties['格局']?.rich_text?.[0]?.plain_text ?? '',
+    price: p.properties['售價']?.rich_text?.[0]?.plain_text ?? '',
+    oldPrice: p.properties['原價']?.rich_text?.[0]?.plain_text ?? '',
+    imageUrl: p.properties['圖片網址']?.url ?? '',
+    propertyUrl: p.properties['物件連結']?.url ?? '',
+    badge: p.properties['標籤']?.select?.name ?? '',
+  }))
+}
