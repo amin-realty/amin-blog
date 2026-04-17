@@ -48,6 +48,13 @@ export default function RootLayout({
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
         <link rel="alternate" type="application/rss+xml" title="敏姐房產通 RSS Feed" href="https://www.minjie-realty.com/feed.xml" />
+        {/* PWA */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#064e3b" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="敏姐房產通" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2502770318496208" crossOrigin="anonymous"></script>
         <script
           type="application/ld+json"
