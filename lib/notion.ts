@@ -41,7 +41,7 @@ export async function getPostBySlug(slug: string): Promise<{ post: BlogPost; blo
     body: JSON.stringify({
       filter: { property: 'Slug', rich_text: { equals: slug } },
     }),
-    next: { revalidate: 3600 },
+    cache: 'no-store',
   })
   const data = await res.json()
   if (!data.results?.length) return null
@@ -49,7 +49,7 @@ export async function getPostBySlug(slug: string): Promise<{ post: BlogPost; blo
   const page = data.results[0]
   const blocksRes = await fetch(`https://api.notion.com/v1/blocks/${page.id}/children?page_size=100`, {
     headers,
-    next: { revalidate: 3600 },
+    cache: 'no-store',
   })
   const blocksData = await blocksRes.json()
 
