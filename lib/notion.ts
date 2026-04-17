@@ -27,7 +27,7 @@ export async function getAllPosts(): Promise<BlogPost[]> {
       filter: { property: 'Status', select: { equals: '發布' } },
       sorts: [{ property: 'Date', direction: 'descending' }],
     }),
-    next: { revalidate: 3600 },
+    cache: 'no-store',
   })
   const data = await res.json()
   return (data.results ?? []).map(pageToPost)
