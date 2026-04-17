@@ -24,6 +24,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
+const SITE = 'https://www.minjie-realty.com'
+
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const result = await getPostBySlug(params.slug)
   if (!result) notFound()
@@ -31,8 +33,48 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const { post, blocks } = result
   const html = blocksToHtml(blocks)
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': ['BlogPosting', 'NewsArticle'],
+    headline: post.title,
+    description: post.summary || post.title,
+    datePublished: post.date || new Date().toISOString(),
+    dateModified: post.date || new Date().toISOString(),
+    author: {
+      '@type': 'Person',
+      name: '敏姐',
+      url: SITE,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: '敏姐房產通',
+      url: SITE,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE}/agent.jpg`,
+      },
+    },
+    url: `${SITE}/blog/${post.slug}`,
+    mainEntityOfPage: `${SITE}/blog/${post.slug}`,
+    keywords: post.tags.join(', '),
+    inLanguage: 'zh-TW',
+    ...(post.cover ? { image: post.cover } : {}),
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: '首頁', item: SITE },
+      { '@type': 'ListItem', position: 2, name: '部落格', item: `${SITE}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE}/blog/${post.slug}` },
+    ],
+  }
+
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {/* Hero 標題區 */}
       <section style={{
         background: 'linear-gradient(160deg, #1a1a2e 0%, #16213e 45%, #9b1c1c 80%, #b91c1c 100%)',
