@@ -2,7 +2,7 @@ import { getPostBySlug, getAllPosts, blocksToHtml } from '@/lib/notion'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 
-export const revalidate = 3600
+export const revalidate = 0
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
