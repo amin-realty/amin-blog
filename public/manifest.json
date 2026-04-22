@@ -1,7 +1,7 @@
 {
-  "name": "敏姐房產通",
-  "short_name": "敏姐房產通",
-  "description": "雲林斗六專業房仲，買房賣房找敏姐！",
+  "name": "敏姊房產通",
+  "short_name": "敏姊房產通",
+  "description": "雲林斗六專業房仲，買房賣房找敏姊！",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#064e3b",

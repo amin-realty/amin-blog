@@ -3,13 +3,13 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '房產知識部落格 | 敏姐房產通',
-  description: '🏠 買房節稅、市場分析、投資攻略，敏姐帶你搞懂雲林房產每一步！',
+  title: '房產知識部落格 | 敏姊房產通',
+  description: '🏠 買房節稅、市場分析、投資攻略，敏姊帶你搞懂雲林房產每一步！',
   openGraph: {
-    title: '🏠 房產知識部落格｜敏姐房產通',
-    description: '買房、賣房、節稅、投資，敏姐幫你搞懂每一步｜雲林斗六專業房仲',
+    title: '🏠 房產知識部落格｜敏姊房產通',
+    description: '買房、賣房、節稅、投資，敏姊幫你搞懂每一步｜雲林斗六專業房仲',
     url: 'https://amin-blog.vercel.app/blog',
-    siteName: '敏姐房產通',
+    siteName: '敏姊房產通',
     locale: 'zh_TW',
     type: 'website',
     images: [
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
         url: 'https://amin-blog.vercel.app/agent.jpg',
         width: 800,
         height: 600,
-        alt: '敏姐房產通 房產知識部落格',
+        alt: '敏姊房產通 房產知識部落格',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '🏠 房產知識部落格｜敏姐房產通',
-    description: '買房、賣房、節稅、投資，敏姐幫你搞懂每一步',
+    title: '🏠 房產知識部落格｜敏姊房產通',
+    description: '買房、賣房、節稅、投資，敏姊幫你搞懂每一步',
     images: ['https://amin-blog.vercel.app/agent.jpg'],
   },
 }
@@ -66,7 +66,7 @@ export default async function BlogPage() {
             房產知識部落格
           </h1>
           <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: 36 }}>
-            買房、賣房、節稅、投資，敏姐幫你搞懂每一步
+            買房、賣房、節稅、投資，敏姊幫你搞懂每一步
           </p>
 
           {/* Agent Card */}
@@ -83,12 +83,12 @@ export default async function BlogPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/agent.jpg"
-              alt="敏姐"
+              alt="敏姊"
               style={{ width: 82, height: 82, borderRadius: '50%', objectFit: 'cover', border: '3px solid #f87171', flexShrink: 0 }}
             />
             {/* 資訊 */}
             <div style={{ textAlign: 'left', flex: 1, minWidth: 200 }}>
-              <div style={{ fontWeight: 900, fontSize: '1.25rem', color: '#fff', marginBottom: 2 }}>敏姐房產通</div>
+              <div style={{ fontWeight: 900, fontSize: '1.25rem', color: '#fff', marginBottom: 2 }}>敏姊房產通</div>
               <div style={{ color: '#fca5a5', fontSize: '0.8rem', marginBottom: 8, letterSpacing: 1 }}>紅火房屋仲介有限公司</div>
               <a href="tel:0988146299" style={{ color: '#fff', textDecoration: 'none', fontSize: '1rem', fontWeight: 700, display: 'block', marginBottom: 10 }}>
                 📞 0988-146-299
@@ -100,7 +100,7 @@ export default async function BlogPage() {
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 <a href="https://www.facebook.com/fantasichouse" target="_blank" rel="noopener noreferrer"
                   style={{ background: '#1877F2', color: '#fff', padding: '5px 14px', borderRadius: 8, fontSize: '0.8rem', fontWeight: 700, textDecoration: 'none' }}>
-                  FB 敏姐房產通
+                  FB 敏姊房產通
                 </a>
                 <a href="https://wa.me/886988146299" target="_blank" rel="noopener noreferrer"
                   style={{ background: '#25D366', color: '#fff', padding: '5px 14px', borderRadius: 8, fontSize: '0.8rem', fontWeight: 700, textDecoration: 'none' }}>

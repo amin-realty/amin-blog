@@ -1,8 +1,8 @@
 import { getAllPosts } from '@/lib/notion'
 
 const SITE = 'https://amin-blog.vercel.app'
-const SITE_NAME = '敏姐房產通'
-const SITE_DESC = '買房、賣房、節稅、投資，敏姐幫你搞懂每一步！雲林斗六專業房仲知識平台。'
+const SITE_NAME = '敏姊房產通'
+const SITE_DESC = '買房、賣房、節稅、投資，敏姊幫你搞懂每一步！雲林斗六專業房仲知識平台。'
 
 export async function GET() {
   const posts = await getAllPosts()

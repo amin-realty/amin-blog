@@ -49,7 +49,7 @@ export default async function HomePage() {
     <>
       {/* ── NAV ── */}
       <nav>
-        <div className="nav-logo">🏠 敏姐房產通</div>
+        <div className="nav-logo">🏠 敏姊房產通</div>
         <ul className="nav-links">
           <li><a href="#properties">最新物件</a></li>
           <li><a href="#services">服務項目</a></li>
@@ -84,12 +84,12 @@ export default async function HomePage() {
       {/* ── HERO ── */}
       <div className="hero">
         <div className="agent-photo-wrap">
-          <img src="/agent.jpg" alt="敏姐 專業顧問" />
-          <div className="agent-name-tag">敏姐 專業顧問</div>
+          <img src="/agent.jpg" alt="敏姊 專業顧問" />
+          <div className="agent-name-tag">敏姊 專業顧問</div>
         </div>
         <div className="hero-content">
           <div className="hero-badge">⭐ 雲林在地房仲・值得信賴</div>
-          <h1>雲林找房，就找 <span>敏姐房產通</span></h1>
+          <h1>雲林找房，就找 <span>敏姊房產通</span></h1>
           <p>雲林房仲推薦首選｜住宅・建地・農地・商辦<br />首購族・換屋・投資置產，全程免費諮詢</p>
           <div className="hero-btns">
             <a href="https://wa.me/886988146299" target="_blank" rel="noopener noreferrer" className="btn-primary">💬 WhatsApp 免費諮詢</a>
@@ -153,7 +153,7 @@ export default async function HomePage() {
       {/* ── WHY ── */}
       <section id="why" className="why">
         <div className="container">
-          <h2 className="section-title">為何選敏姐房產通</h2>
+          <h2 className="section-title">為何選敏姊房產通</h2>
           <p className="section-sub">雲林在地房仲，值得信賴的五大理由</p>
           <div className="why-grid">
             {[
@@ -231,11 +231,11 @@ export default async function HomePage() {
 
       {/* ── FOOTER ── */}
       <footer>
-        <strong>敏姐房產通</strong> — 雲林房仲推薦<br />
+        <strong>敏姊房產通</strong> — 雲林房仲推薦<br />
         雲林縣斗六市 ｜ 📞 0988-146-299 ｜{' '}
         <a href="https://wa.me/886988146299">WhatsApp</a> ｜{' '}
         <a href="https://www.facebook.com/fantasichouse">Facebook</a><br />
-        © 2025 敏姐房產通・雲林找房・雲林建地・雲林房仲推薦
+        © 2025 敏姊房產通・雲林找房・雲林建地・雲林房仲推薦
       </footer>
 
       {/* ── 浮動 WhatsApp ── */}

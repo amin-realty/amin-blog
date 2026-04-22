@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const result = await getPostBySlug(params.slug)
   if (!result) return {}
   return {
-    title: `${result.post.title} | 敏姐房產通`,
+    title: `${result.post.title} | 敏姊房產通`,
     description: result.post.summary,
     openGraph: {
       title: result.post.title,
@@ -42,12 +42,12 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     dateModified: post.date || new Date().toISOString(),
     author: {
       '@type': 'Person',
-      name: '敏姐',
+      name: '敏姊',
       url: SITE,
     },
     publisher: {
       '@type': 'Organization',
-      name: '敏姐房產通',
+      name: '敏姊房產通',
       url: SITE,
       logo: {
         '@type': 'ImageObject',
@@ -102,7 +102,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           <h1 style={{ fontSize: 'clamp(1.5rem,4vw,2.4rem)', fontWeight: 900, color: '#fff', marginBottom: 12, lineHeight: 1.3 }}>
             {post.title}
           </h1>
-          <p style={{ color: '#a7f3d0', fontSize: '0.9rem' }}>{post.date} · 敏姐房產通</p>
+          <p style={{ color: '#a7f3d0', fontSize: '0.9rem' }}>{post.date} · 敏姊房產通</p>
         </div>
       </section>
 
@@ -121,7 +121,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           border: '1px solid rgba(110,231,183,0.3)',
         }}>
           <p style={{ fontWeight: 900, fontSize: '1.2rem', color: '#fca5a5', marginBottom: 6 }}>
-            想了解更多？找敏姐房產通
+            想了解更多？找敏姊房產通
           </p>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', marginBottom: 20 }}>
             紅火房屋仲介有限公司
@@ -145,7 +145,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             </a>
             <a href="https://www.facebook.com/fantasichouse" target="_blank" rel="noopener noreferrer"
               style={{ background: '#1877F2', color: '#fff', padding: '10px 24px', borderRadius: 8, fontWeight: 700, fontSize: '0.95rem', textDecoration: 'none' }}>
-              FB 敏姐房產通
+              FB 敏姊房產通
             </a>
           </div>
         </div>
