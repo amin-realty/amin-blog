@@ -130,7 +130,7 @@ export default async function HomePage() {
       <section id="services" className="services">
         <div className="container">
           <h2 className="section-title">服務項目</h2>
-          <p className="section-sub">雲林房仲推薦・專業服務全面覆蓋<br />無論買屋、賣屋、租屋，阿敏都能幫您搞定</p>
+          <p className="section-sub">雲林房仲推薦・專業服務全面覆蓋<br />無論買屋、賣屋、租屋，敏姊都能幫您搞定</p>
           <div className="services-grid">
             {[
               {icon:'🏡',title:'雲林找房・住宅買賣',desc:'首購、換屋、投資，全程陪伴，找到最適合的家。'},
@@ -160,7 +160,7 @@ export default async function HomePage() {
               {n:'01',t:'在地深耕，熟悉每條巷弄',d:'多年深耕雲林，每個區域的行情與特色都瞭若指掌。'},
               {n:'02',t:'即時 WhatsApp 回覆',d:'不讓您等待，隨時傳訊詢問，快速給您專業回覆。'},
               {n:'03',t:'透明誠信，不藏資訊',d:'優缺點都告訴您，讓您做出最適合自己的決定。'},
-              {n:'04',t:'全程陪伴，售後不消失',d:'從看屋到過戶，每個環節都有阿敏在您身旁。'},
+              {n:'04',t:'全程陪伴，售後不消失',d:'從看屋到過戶，每個環節都有敏姊在您身旁。'},
               {n:'05',t:'建地農地專業把關',d:'土地交易眉角多，讓專業的人幫您避開地雷。'},
               {n:'06',t:'免費諮詢，零壓力',d:'不管買不買，歡迎先來聊聊，沒有任何壓力。'},
             ].map(w => (
@@ -206,7 +206,7 @@ export default async function HomePage() {
               <h3>其他地區・代尋代售</h3>
               <div className="area-tags-inner">
                 <span>全台各縣市物件皆可洽詢</span>
-                <span>有需求就找阿敏，免費諮詢</span>
+                <span>有需求就找敏姊，免費諮詢</span>
               </div>
               <a href="https://wa.me/886988146299" className="area-cta" target="_blank" rel="noopener noreferrer">💬 告訴我您的需求</a>
             </div>
@@ -219,7 +219,7 @@ export default async function HomePage() {
         <div className="container">
           <div className="cta-box">
             <h2>立即免費諮詢</h2>
-            <p>不管是雲林找房、雲林建地，<br />還是委託銷售，阿敏都能幫您！</p>
+            <p>不管是雲林找房、雲林建地，<br />還是委託銷售，敏姊都能幫您！</p>
             <span className="cta-phone">📞 0988-146-299</span>
             <div className="hero-btns">
               <a href="https://wa.me/886988146299" target="_blank" rel="noopener noreferrer" className="btn-primary">💬 WhatsApp 傳訊</a>
