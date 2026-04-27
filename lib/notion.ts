@@ -24,7 +24,12 @@ export async function getAllPosts(): Promise<BlogPost[]> {
     method: 'POST',
     headers,
     body: JSON.stringify({
-      filter: { property: 'Status', select: { equals: '發布' } },
+      filter: {
+        or: [
+          { property: 'Status', select: { equals: 'Published' } },
+          { property: 'Status', select: { equals: '發布' } },
+        ]
+      },
       sorts: [{ property: 'Date', direction: 'descending' }],
     }),
     cache: 'no-store',

@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: '🏠 房產知識部落格｜敏姊房產通',
     description: '買房、賣房、節稅、投資，敏姊幫你搞懂每一步｜雲林斗六專業房仲',
-    url: 'https://amin-blog.vercel.app/blog',
+    url: 'https://minjie-realty.com/blog',
     siteName: '敏姊房產通',
     locale: 'zh_TW',
     type: 'website',
     images: [
       {
-        url: 'https://amin-blog.vercel.app/agent.jpg',
+        url: 'https://minjie-realty.com/agent.jpg',
         width: 800,
         height: 600,
         alt: '敏姊房產通 房產知識部落格',
@@ -25,14 +25,24 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '🏠 房產知識部落格｜敏姊房產通',
     description: '買房、賣房、節稅、投資，敏姊幫你搞懂每一步',
-    images: ['https://amin-blog.vercel.app/agent.jpg'],
+    images: ['https://minjie-realty.com/agent.jpg'],
   },
 }
 
 export const revalidate = 0
 
-export default async function BlogPage() {
-  const posts = await getAllPosts()
+const PAGE_SIZE = 10
+
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>
+}) {
+  const params = await searchParams
+  const currentPage = Math.max(1, parseInt(params.page ?? '1', 10))
+  const allPosts = await getAllPosts()
+  const totalPages = Math.ceil(allPosts.length / PAGE_SIZE)
+  const posts = allPosts.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
 
   return (
     <main style={{ background: '#f8f7f5' }}>
@@ -112,15 +122,15 @@ export default async function BlogPage() {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, flexShrink: 0 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://amin-realty.github.io&color=1a1a2e&bgcolor=FFF7F7"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://minjie-realty.com&color=1a1a2e&bgcolor=FFF7F7"
                 alt="掃碼看網站"
                 width={100} height={100}
                 style={{ borderRadius: 10, border: '3px solid #f87171', padding: 4, background: '#FFF7F7' }}
               />
               <span style={{ fontSize: '0.72rem', color: '#fca5a5', letterSpacing: 2 }}>掃碼看網站</span>
-              <a href="https://amin-realty.github.io" target="_blank" rel="noopener noreferrer"
+              <a href="https://minjie-realty.com" target="_blank" rel="noopener noreferrer"
                 style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', letterSpacing: 0.5 }}>
-                amin-realty.github.io
+                minjie-realty.com
               </a>
             </div>
           </div>
@@ -178,6 +188,33 @@ export default async function BlogPage() {
         </div>
         {posts.length === 0 && (
           <div style={{ textAlign: 'center', padding: '80px 0', color: '#9ca3af' }}>目前還沒有文章，敬請期待。</div>
+        )}
+
+        {/* 分頁 */}
+        {totalPages > 1 && (
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 8, marginTop: 48 }}>
+            {currentPage > 1 && (
+              <Link href={`/blog?page=${currentPage - 1}`} style={{
+                padding: '8px 18px', borderRadius: 8, border: '1px solid #fecaca',
+                color: '#b91c1c', fontWeight: 700, textDecoration: 'none', fontSize: '0.9rem',
+              }}>← 上一頁</Link>
+            )}
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
+              <Link key={p} href={`/blog?page=${p}`} style={{
+                padding: '8px 14px', borderRadius: 8, fontWeight: 700, fontSize: '0.9rem',
+                textDecoration: 'none',
+                background: p === currentPage ? '#b91c1c' : 'transparent',
+                color: p === currentPage ? '#fff' : '#6b7280',
+                border: `1px solid ${p === currentPage ? '#b91c1c' : '#e5e7eb'}`,
+              }}>{p}</Link>
+            ))}
+            {currentPage < totalPages && (
+              <Link href={`/blog?page=${currentPage + 1}`} style={{
+                padding: '8px 18px', borderRadius: 8, border: '1px solid #fecaca',
+                color: '#b91c1c', fontWeight: 700, textDecoration: 'none', fontSize: '0.9rem',
+              }}>下一頁 →</Link>
+            )}
+          </div>
         )}
       </section>
     </main>
