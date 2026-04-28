@@ -1,7 +1,7 @@
 import { getAllPosts } from '@/lib/notion'
 import type { MetadataRoute } from 'next'
 
-const SITE = 'https://amin-blog.vercel.app'
+const SITE = 'https://minjie-realty.com'
 
 export const revalidate = 3600 // 每小時重新生成一次
 

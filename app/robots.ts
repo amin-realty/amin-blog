@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://amin-blog.vercel.app/sitemap.xml',
+    sitemap: 'https://minjie-realty.com/sitemap.xml',
   }
 }

@@ -1,6 +1,6 @@
 import { getAllPosts } from '@/lib/notion'
 
-const SITE = 'https://amin-blog.vercel.app'
+const SITE = 'https://minjie-realty.com'
 const SITE_NAME = '敏姊房產通'
 const SITE_DESC = '買房、賣房、節稅、投資，敏姊幫你搞懂每一步！雲林斗六專業房仲知識平台。'
 

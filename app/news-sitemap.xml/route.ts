@@ -1,6 +1,6 @@
 import { getAllPosts } from '@/lib/notion'
 
-const SITE = 'https://amin-blog.vercel.app'
+const SITE = 'https://minjie-realty.com'
 const SITE_NAME = '敏姊房產通'
 
 export async function GET() {
